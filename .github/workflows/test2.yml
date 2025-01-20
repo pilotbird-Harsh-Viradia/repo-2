@@ -1,1 +1,14 @@
 
+name: Listener Workflow for Repository Dispatch
+
+on:
+  repository_dispatch:
+    types:
+      - test-trigger
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Respond to Trigger
+        run: echo "Repository dispatch event triggered this workflow!"
